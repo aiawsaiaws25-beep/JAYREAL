@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-white: #ffffff;
+  --color-offwhite: #f7f5f2;
+  --color-charcoal: #1a1a1a;
+  --color-warmgray: #6b6b6b;
+  --color-gold: #b8975a;
+  --color-gold-light: #d4bc8a;
+  --color-line: #e6e2dc;
+
+  /* Fonts (populated by next/font in layout.tsx) */
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+
+  /* Spacing scale additions */
+  --spacing-section: 6rem;
+  --spacing-section-lg: 9rem;
+  --spacing-gutter: 1.5rem;
+
+  /* Tracking */
+  --tracking-label: 0.3em;
+  --tracking-wide-xl: 0.4em;
+  --tracking-display: 0.02em;
+
+  /* Motion */
+  --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-zoom-slow: zoom-slow 1.4s var(--ease-luxury) forwards;
+
+  @keyframes shimmer {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(200%); }
+  }
+
+  @keyframes zoom-slow {
+    from { transform: scale(1); }
+    to { transform: scale(1.06); }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--color-white);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    font-weight: 300;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    letter-spacing: var(--tracking-display);
+    line-height: 1.05;
+  }
+
+  ::selection {
+    background: var(--color-gold);
+    color: var(--color-white);
+  }
+}
+
+@layer utilities {
+  .font-serif { font-family: var(--font-serif); }
+  .font-sans { font-family: var(--font-sans); }
+
+  .label {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  .gold-line {
+    display: block;
+    width: 3rem;
+    height: 1px;
+    background: var(--color-gold);
+  }
+}
