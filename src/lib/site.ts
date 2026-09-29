@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Jay Real Estate",
   tagline: "Luxury Property in Dubai",
   /** Canonical production URL. Update after the first Vercel deploy or when a custom domain is attached. */
-  url: "https://jay-real-estate.vercel.app",
+  url: "https://jayreal.vercel.app",
   ogImage: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&h=630&q=80",
   nav: [
     { label: "Properties", href: "/properties" },
